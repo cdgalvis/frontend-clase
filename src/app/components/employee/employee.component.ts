@@ -26,7 +26,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   addEmployee(form: NgForm){
-
+    console.log(form.value)
   }
 
 }

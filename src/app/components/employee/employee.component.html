@@ -3,19 +3,18 @@
         <div class="card">
             <div class="card-body">
                 <h1>Formulario</h1>
-                <form #employeeForm="ngForm" 
-                (ngSubmit)="addEmployee(employeeForm)">
+                <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Enter your FullName">
+                        <input type="text" class="form-control" name="name" placeholder="Enter your FullName" [(ngModel)]="employeeService.selectedEmployee.name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="position" placeholder="Enter your Position">
+                        <input type="text" class="form-control" name="position" placeholder="Enter your Position" [(ngModel)]="employeeService.selectedEmployee.position">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="office" placeholder="Enter your Office">
+                        <input type="text" class="form-control" name="office" placeholder="Enter your Office"  [(ngModel)]="employeeService.selectedEmployee.office">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="salary" placeholder="Enter your Salary">
+                        <input type="number" class="form-control" name="salary" placeholder="Enter your Salary"  [(ngModel)]="employeeService.selectedEmployee.salary">
                     </div>
 
                     <button class="btn btn-primary m-2">

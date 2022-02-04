@@ -7,8 +7,15 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
 
-  URL_API = 'http://localhost:4000/api/employees'
+  URL_API = 'http://localhost:4000/api/employees';
 
+  selectedEmployee: Employee = {
+    name: '',
+    position: '',
+    office:'',
+    salary: 0
+  };
+  
   employees : Employee[];
 
   constructor(private http: HttpClient) { }
