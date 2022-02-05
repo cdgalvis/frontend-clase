@@ -15,7 +15,7 @@ export class EmployeeService {
     office:'',
     salary: 0
   };
-  
+
   employees : Employee[];
 
   constructor(private http: HttpClient) { }
@@ -23,4 +23,9 @@ export class EmployeeService {
   getEmployees(){
     return this.http.get<Employee[]>(this.URL_API)
   }
+
+  createEmployee(employee: Employee){
+    return this.http.post(this.URL_API, employee)
+  }
+
 }

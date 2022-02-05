@@ -26,7 +26,10 @@ export class EmployeeComponent implements OnInit {
   }
 
   addEmployee(form: NgForm){
-    console.log(form.value)
+    this.employeeService.createEmployee(form.value).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
   }
 
 }
