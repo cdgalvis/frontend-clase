@@ -35,6 +35,7 @@ export class EmployeeComponent implements OnInit {
       this.employeeService.putEmployee(form.value).subscribe(
         res => {
           this.getEmployees();
+          form.reset();
         },
         err => console.log(err)
       )
