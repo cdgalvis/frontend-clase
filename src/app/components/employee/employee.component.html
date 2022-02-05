@@ -4,6 +4,9 @@
             <div class="card-body">
                 <h1>Formulario</h1>
                 <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+
+                    <input type="hidden" name="_id" [(ngModel)]="employeeService.selectedEmployee._id">
+
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" placeholder="Enter your FullName" [(ngModel)]="employeeService.selectedEmployee.name">
                     </div>
@@ -17,7 +20,7 @@
                         <input type="number" class="form-control" name="salary" placeholder="Enter your Salary"  [(ngModel)]="employeeService.selectedEmployee.salary">
                     </div>
 
-                    <button class="btn btn-primary m-2">
+                    <button class="btn btn-primary m-2" (click)="resetForm(employeeForm)">
                         Clean
                     </button>
                     <button class="btn btn-secondary">
