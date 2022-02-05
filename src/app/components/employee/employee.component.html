@@ -43,10 +43,10 @@
                     <td>{{ employee.position}}</td>
                     <td>{{ employee.office}}</td>
                     <td>
-                        <button class="btn btn-secondary btn-sm">
+                        <button class="btn btn-secondary btn-sm" (click)="editEmployee(employee)">
                             <i class="material-icons">edit</i>
                         </button>
-                        <button class="btn btn-danger btn-sm" (click)="deleteEmployee()">
+                        <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee._id)">
                             <i class="material-icons">delete</i> 
                         </button>
                     </td>

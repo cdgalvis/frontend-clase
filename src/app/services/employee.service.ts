@@ -28,4 +28,8 @@ export class EmployeeService {
     return this.http.post(this.URL_API, employee)
   }
 
+  deleteEmployee(_id: string){
+    return this.http.delete(`${this.URL_API}/${_id}`)
+  }
+
 }

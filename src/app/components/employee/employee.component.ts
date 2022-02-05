@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { NgForm } from '@angular/forms';
+import { Employee } from 'src/app/models/employee';
 
 
 @Component({
@@ -35,8 +36,19 @@ export class EmployeeComponent implements OnInit {
     )
   }
 
-  deleteEmployee(){
-    alert('Eliminado')
+  deleteEmployee(id: string){
+    if(confirm('Desea eliminar el registro?')){
+      this.employeeService.deleteEmployee(id).subscribe(
+        res => {
+          this.getEmployees();
+        },
+        err => console.log(err)
+      );
+    }
+  }
+
+  editEmployee(employee: Employee){
+    this.employeeService.selectedEmployee = employee;
   }
 
 }
