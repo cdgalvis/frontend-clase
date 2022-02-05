@@ -35,4 +35,8 @@ export class EmployeeComponent implements OnInit {
     )
   }
 
+  deleteEmployee(){
+    alert('Eliminado')
+  }
+
 }
